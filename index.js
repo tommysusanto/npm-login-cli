@@ -5,6 +5,7 @@ const registry = process.argv[2]
 const username = process.argv[3];
 const password = process.argv[4];
 const email = process.argv[5];
+const timeout = process.argv[6] || 5000;
 
 const windowsEnvironment = process.platform === "win32";
 
@@ -39,7 +40,7 @@ childProcess.stdout.on('data', function (data) {
         catch (e) {
             console.error('can\'t kill process', e);
         }
-    }, 1000);
+    }, timeout);
 });
 
 childProcess.stderr.on('data', function (error) {
