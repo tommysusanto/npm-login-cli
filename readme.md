@@ -133,6 +133,26 @@ npm-login-cli https://registry.npmjs.org user pass email
 
 Some registries require additional configuration (tokens, 2FA, OAuth). This tool only handles basic username/password authentication.
 
+### Special characters in password
+
+If your password contains shell special characters (`` ` ``, `(`, `)`, `$`, `!`, `&`, `*`, `\`, etc.), wrap it in single quotes:
+
+```bash
+npm-login-cli https://registry.npmjs.org myuser 'p@ss(word)!' user@example.com
+```
+
+Or escape special characters with a backslash:
+
+```bash
+npm-login-cli https://registry.npmjs.org myuser p@ss\(word\)\! user@example.com
+```
+
+**Note:** If your password contains a single quote (`'`), use double quotes instead or escape it:
+
+```bash
+npm-login-cli https://registry.npmjs.org myuser "p@ss'word" user@example.com
+```
+
 ## Limitations
 
 - **No 2FA support**: Cannot handle two-factor authentication prompts
