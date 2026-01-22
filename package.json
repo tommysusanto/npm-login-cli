@@ -1,12 +1,12 @@
 {
   "name": "npm-login-cli",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "\"npm login\" via Mac/Windows/Unix cli",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "node --test test/"
   },
   "bin": {
     "npm-login-cli": "./index.js"
